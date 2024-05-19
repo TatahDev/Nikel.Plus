@@ -41,6 +41,8 @@ document.getElementById("create-form").addEventListener("submit", function(e) {
         const password = document.getElementById("password-create-input").value;
         const confirmpassword = document.getElementById("confirmpassword-create-input").value;
 
+        const account = getAccount(email);
+
         if(email.length < 5) {
             alert("Preencha o campo com um e-mail válido.");
             return;
@@ -53,7 +55,11 @@ document.getElementById("create-form").addEventListener("submit", function(e) {
             alert('As senhas estão diferentes. Por favor, digite a mesma senha nos campos "Senha" e "Confirmar senha".');
             return;
         }
-
+        if(account) {
+            alert("Usuário já existente. Verifique o e-mail digitado ou realize o login.")
+            return;
+        }
+        
         saveAccount({
             login: email,
             password: password,
