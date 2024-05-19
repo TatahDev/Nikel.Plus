@@ -56,7 +56,7 @@ document.getElementById("create-form").addEventListener("submit", function(e) {
             return;
         }
         if(account) {
-            alert("Usuário já existente. Verifique o e-mail digitado ou realize o login.")
+            alert('Usuário já existente. Verifique o e-mail digitado ou clique em "Cancelar" para realizar o login.')
             return;
         }
         
